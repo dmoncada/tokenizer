@@ -148,11 +148,7 @@ def main(
 
     if format == OutputFormat.token_count:
         typer.echo(sum(1 for _ in stream))
-    elif format == OutputFormat.csv:
+    if format == OutputFormat.csv:
         output_csv_stream(stream)
-    elif format == OutputFormat.jsonl:
+    if format == OutputFormat.jsonl:
         output_jsonl_stream(stream)
-
-
-if __name__ == "__main__":
-    app()

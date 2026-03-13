@@ -4,3 +4,10 @@ repos:
     hooks:
       - id: ruff-check
       - id: ruff-format
+  - repo: local
+    hooks:
+      - id: ty-check
+        name: ty check
+        entry: uvx ty check src/ tests/
+        language: system
+        types: [python]
