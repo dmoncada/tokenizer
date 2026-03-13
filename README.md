@@ -6,6 +6,9 @@ Simple CLI tool for OpenAI's [`tiktoken`][1].
 
 ```bash
 uv tool install git+https://github.com/dmoncada/tokenizer
+
+# Make sure that the `uv` tool executable directory is in your PATH.
+# See: https://docs.astral.sh/uv/reference/storage/#tool-executables
 ```
 
 ## Usage
@@ -18,7 +21,7 @@ tokenizer --help
 tokenizer README.md
 
 # Output:
-# 337
+# 373
 
 # Input from file; pipe, for ex. to `csvlook`:
 tokenizer README.md -f csv | csvlook | head
