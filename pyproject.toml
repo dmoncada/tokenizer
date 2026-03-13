@@ -1,0 +1,41 @@
+[project]
+name = "tokenizer"
+version = "0.1.0"
+description = "Simple CLI tool for OpenAI's tiktoken."
+readme = "README.md"
+authors = [
+    { name = "David Moncada", email = "david_moncada@icloud.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "tiktoken>=0.12.0",
+    "typer>=0.24.1",
+]
+
+[project.scripts]
+tokenizer = "tokenizer.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.10.9,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.1",
+    "pre-commit>=4.5.1",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.15.6",
+]
+
+[tool.ruff.lint]
+extend-select = ["D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.setuptools.packages.find]
+include = ["tokenizer*"]
+
+[tool.setuptools.package_data]
+"tokenizer" = ["py.typed"]
